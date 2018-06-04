@@ -17,12 +17,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
@@ -43,7 +41,7 @@ public class MainActivity extends Activity {
             String encodedCityName = URLEncoder.encode(cityName.getText().toString(), "UTF-8");
 
             DownloadTask task = new DownloadTask();
-            task.execute("http://api.openweathermap.org/data/2.5/weather?q=" + encodedCityName);
+            task.execute("http://api.openweathermap.org/data/2.5/weather?q=" + encodedCityName+"&appid=35c2f8ff5bc45ebaa5df9efcfd449339");
 
 
         } catch (UnsupportedEncodingException e) {
